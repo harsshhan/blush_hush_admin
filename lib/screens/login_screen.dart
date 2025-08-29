@@ -1,5 +1,5 @@
 import 'package:blush_hush_admin/constants/styles.dart';
-import 'package:blush_hush_admin/screens/home_screen.dart';
+import 'package:blush_hush_admin/screens/home_scafold.dart';
 import 'package:blush_hush_admin/services/auth_services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -35,7 +35,7 @@ class _AuthScreenState extends State<AuthScreen> {
       if (user != null) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (_) => HomeScreen()),
+          MaterialPageRoute(builder: (_) => HomeScafold()),
         );
       }
     } on FirebaseAuthException catch(e){
@@ -123,7 +123,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       width: 200,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
-                        color: Styles.primary_color,
+                        color: Styles.primaryColor,
                       ),
                       child: Center(
                         child: isLoading?CircularProgressIndicator() :Text(
